@@ -1,0 +1,30 @@
+name: Build Github Action
+on: [push]
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        config:
+        - name: win
+          os: windows-latest
+          path: build/Release/*.lib
+          ext: lib
+
+        - name: mac
+          os: macos-latest
+          path: build/*.a
+          ext: a
+
+
+    name: ${{ matrix.config.name }}
+    runs-on: ${{ matrix.config.os }}
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: nicledomaS/cmake_build_action@v1.4
+      - uses: actions/upload-artifact@v4
+        with:
+          path: ${{ matrix.config.path }}
+          name: libgeode-ipc.${{ matrix.config.ext }}
