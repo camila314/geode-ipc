@@ -1,5 +1,6 @@
 #include <geode-ipc.hpp>
-#include <iostream>
+#include <geode-ipc.h>
+
 using namespace geode;
 using namespace matjson;
 

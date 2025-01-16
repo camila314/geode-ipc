@@ -1,10 +1,6 @@
 #include <string>
 #include <matjson.hpp>
 
-extern "C" {
-#include "geode-ipc.h"
-}
-
 namespace GeodeIPC {
 	/**
 	 * Send raw string and accept raw value. Not recommended,
