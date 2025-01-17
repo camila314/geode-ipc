@@ -6,7 +6,7 @@ add_library(${PROJECT_NAME} STATIC src/geode-ipc.c src/geode-ipc.cpp)
 target_include_directories(${PROJECT_NAME} PUBLIC include/)
 
 include(CPM.cmake)
-CPMAddPackage("gh:geode-sdk/json@3.2.0")
+CPMAddPackage("gh:geode-sdk/json@3.2.1")
 
 target_link_libraries(${PROJECT_NAME} PUBLIC mat-json)
 
